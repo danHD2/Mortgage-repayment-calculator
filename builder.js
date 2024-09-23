@@ -135,13 +135,13 @@ export const builder = () => {
     radioInputOne.classList = "radio-input";
     radioInputOne.type = "radio";
     radioInputOne.id = "radio-one";
-    radioInputOne.name = "radio-one";
+    radioInputOne.name = "radio";
     radioDivOne.appendChild(radioInputOne);
 
     const radioLabelOne = document.createElement("label");
     radioLabelOne.classList = "radio-label";
     radioLabelOne.textContent = "Repayment";
-    radioLabelOne.htmlFor = "radio-one";
+    radioLabelOne.htmlFor = "radio";
     radioDivOne.appendChild(radioLabelOne);
 
     const radioDivTwo = document.createElement("div");
@@ -152,25 +152,28 @@ export const builder = () => {
     radioInputTwo.classList = "radio-input";
     radioInputTwo.type = "radio";
     radioInputTwo.id = "radio-two";
-    radioInputTwo.name = "radio-two";
+    radioInputTwo.name = "radio";
     radioDivTwo.appendChild(radioInputTwo);
 
     const radioLabelTwo = document.createElement("label");
     radioLabelTwo.classList = "radio-label";
     radioLabelTwo.textContent = "Interest Only";
-    radioLabelTwo.htmlFor = "radio-two";
+    radioLabelTwo.htmlFor = "radio";
     radioDivTwo.appendChild(radioLabelTwo);
 
-    const submit = document.createElement("input");
+    const submit = document.createElement("button");
     submit.type = "submit";
     submit.id = "submit";
     form.appendChild(submit);
 
+    const submitIcon = document.createElement("img");
+    submitIcon.id = "submit-icon";
+    submitIcon.src = "./assets/images/icon-calculator.svg"
+    submit.appendChild(submitIcon);
 
-
-
-
-
-
+    const submitTxt = document.createElement("p");
+    submitTxt.id = "submit-text";
+    submitTxt.textContent = "Calculate Repayments";
+    submit.appendChild(submitTxt);
 
 }

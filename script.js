@@ -1,4 +1,4 @@
 const root = document.getElementById("root");
-import { builder } from "./builder.js";
+import { constGatherer } from "./new-builder.js";
 
-builder();
+constGatherer();
