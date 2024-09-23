@@ -58,6 +58,7 @@
     --slate5: hsl(200, 26%, 54%);
     --slate7: hsl(200, 24%, 40%);
     --slate9: hsl(202, 55%, 16%);
+    --slate10: hsl(201, 54%, 10%);
 }
 
 
@@ -72,6 +73,7 @@
   }
 
   .container {
+    max-width: 1100px;
     display: flex;
     background-color: white;
     border-radius: 20px;
@@ -91,12 +93,69 @@
     padding: 30px;
   }
 
+  .empty-results {
+    display: none;
+  }
+
+  .right-div-full {
+    background-color: var(--slate9);
+    color: white;
+    border-radius: 0px 20px 20px 50px;
+    width: 50%;
+    padding: 30px;
+  }
+
+  .full-title {
+    margin-bottom: 20px;
+  }
+
+  .full-text {
+    color: var(--slate3);
+  }
+
+  .results-div {
+    background-color: var(--slate10);
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    border-top: 3px solid var(--lime);
+  }
+
+  .monthly-title {
+    color: var(--slate3);
+    margin-bottom: 10px;
+  }
+
+  .monthly-result {
+    color: var(--lime);
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  #hr {
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid rgba(255, 255, 255, 0.129);;
+  }
+
+  .total-title {
+    color: var(--slate3);
+    margin-bottom: 10px;
+  }
+
+  .total-result {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
   .empty-text {
+    display: none;
     color: var(--slate3);
     padding-top: 20px;
   }
 
   .illustration {
+    display: none;
     padding-bottom: 10px;
   }
 
@@ -125,6 +184,11 @@
     font-weight: 500;
     border-bottom: 1px dotted #000;
     text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .clear-btn:hover {
+    color: var(--slate9);
   }
 
   .form {
@@ -139,6 +203,8 @@
 
 .amount-div {
     position: relative;
+    font-weight: 800;
+    
 }
 
 #amount {
@@ -151,6 +217,8 @@
     outline-offset: 0px;
     border: 1px solid var(--slate7);
     border-radius: 5px;
+    color: var(--slate9);
+    cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
@@ -181,6 +249,7 @@ input::-webkit-inner-spin-button {
 .term-div {
   margin-top: 10px;
   position: relative;
+  font-weight: 800;
   }
 
   #term {
@@ -192,6 +261,9 @@ input::-webkit-inner-spin-button {
     outline-offset: 0px;
     border: 1px solid var(--slate7);
     border-radius: 5px;
+    color: var(--slate9);
+    cursor: pointer;
+    z-index: 1;
   }
 
 #years {
@@ -210,6 +282,7 @@ input::-webkit-inner-spin-button {
 .rate-div {
   margin-top: 10px;
   position: relative;
+  font-weight: 800;
   }
 
   #rate {
@@ -221,6 +294,9 @@ input::-webkit-inner-spin-button {
     outline-offset: 0px;
     border: 1px solid var(--slate7);
     border-radius: 5px;
+    color: var(--slate9);
+    cursor: pointer;
+    z-index: 1;
   }
 
 #perc {
@@ -251,7 +327,36 @@ input::-webkit-inner-spin-button {
   border: 1px solid var(--slate7);
   border-radius: 5px;
   font-weight: 800;
+  transition: 0.2s;
   color: var(--slate9);
+  cursor: pointer;
+  
+}
+
+.radio-input {
+  accent-color: var(--lime);
+  border: 0px;
+  background-color: var(--lime);
+}
+
+.radio-div:hover {
+  border: 1px solid rgba(215, 218, 47, 1);
+}
+
+.radio-input:checked {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 2px solid #FFF;
+  box-shadow: 0 0 0 1px var(--lime);
+}
+
+.radio-div:has(input[type="radio"]:checked) {
+  background-color: rgba(215, 218, 47, 0.1);
+  border: 1px solid rgba(215, 218, 47, 1);
 }
 
 .radio-label {
@@ -269,8 +374,14 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
   align-items: center;
   color: var(--slate9);
+  transition: 0.2s;
 }
 
 #submit-text {
   padding-left: 10px;
+}
+
+#submit:hover {
+  background-color: rgba(215, 218, 47, 0.5);
+  cursor: pointer;
 }

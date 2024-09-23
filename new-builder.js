@@ -45,6 +45,22 @@ export function constGatherer() {
 
     const emptyText = elementBuilder({...bluePrint, element: "p", classList: "empty-text", textContent: `Complete the form and click “calculate repayments” to see what your monthly repayments would be.`, target: rightDiv});
 
+    const fullTitle = elementBuilder({...bluePrint, element: "h2", classList: "full-title", textContent: "Your Results", target: rightDiv});
+
+    const fullText = elementBuilder({...bluePrint, element: "p", classList: "full-text", textContent: `Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.`, target: rightDiv});
+
+    const resultsDiv = elementBuilder({...bluePrint, classList: "results-div", target: rightDiv});
+
+    const monthlyTitle = elementBuilder({...bluePrint, element: "p", classList: "monthly-title", textContent: "Your monthly repayments", target: resultsDiv});
+
+    const monthlyResult = elementBuilder({...bluePrint, element: "p", classList: "monthly-result", textContent: "$1,797.74", target: resultsDiv});
+
+    const hr = elementBuilder({...bluePrint, element: "hr", id: "hr", target: resultsDiv});
+
+    const totalTitle = elementBuilder({...bluePrint, element: "p", classList: "total-title", textContent: "Total you'll repay over the term", target: resultsDiv});
+
+    const totalResult = elementBuilder({...bluePrint, element: "p", classList: "total-result", textContent: "$539,322.94", target: resultsDiv});
+
     const titleDiv = elementBuilder({...bluePrint, classList: "title-div", target: leftDiv});
 
     const title = elementBuilder({...bluePrint, element: "h1", classList: "title", textContent: "Mortgage Calculator", target: titleDiv});
@@ -96,6 +112,14 @@ export function constGatherer() {
     const radioInputTwo = elementBuilder({...bluePrint, element: "input", classList: "radio-input", type: "radio", id: "radio-two", name: "radio", target: radioDivTwo});
 
     const radioLabelTwo = elementBuilder({...bluePrint, element: "label", classList: "radio-label", textContent: "Interest Only", htmlFor: "radio", target: radioDivTwo});
+
+    radioDivOne.addEventListener("click", () => {
+        radioInputOne.checked = true;
+    });
+    
+    radioDivTwo.addEventListener("click", () => {
+        radioInputTwo.checked = true;
+    });
 
     const submit = elementBuilder({...bluePrint, element: "button", type: "submit", id: "submit", target: form});
 
