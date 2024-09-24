@@ -73,9 +73,11 @@ export function constGatherer() {
 
     const amountDiv = elementBuilder({...bluePrint, classList: "amount-div", target: form});
 
-    const quid = elementBuilder({...bluePrint, id: "quid", textContent: "£", target: amountDiv});
+    const quid = elementBuilder({...bluePrint, id: "quid", classList: "quid", textContent: "£", target: amountDiv});
 
-    const amountInput = elementBuilder({...bluePrint, id: "amount", element: "input", name: "amount", type: "text", target: amountDiv});
+    const amountInput = elementBuilder({...bluePrint, id: "amount",classList: "amount", element: "input", name: "amount", type: "text", target: amountDiv});
+
+    const amountSpan = elementBuilder({...bluePrint, id: "amount-span", classList: "span", element: "p", textContent: "This field is required", target: form});
 
     const outerDiv = elementBuilder({...bluePrint, id: "outer-div", target: form});
 
@@ -87,19 +89,21 @@ export function constGatherer() {
 
     const termDiv = elementBuilder({...bluePrint, classList: "term-div", target: inlineDiv});
 
-    const termInput = elementBuilder({...bluePrint, element: "input", id: "term", name: "term", type: "number", target: termDiv});
+    const termInput = elementBuilder({...bluePrint, element: "input", id: "term", classList: "term", name: "term", type: "number", target: termDiv});
 
-    const years = elementBuilder({...bluePrint, id: "years", textContent: "years", target: termDiv});
+    const termSpan = elementBuilder({...bluePrint, id: "term-span", classList: "span", element: "p", textContent: "This field is required", target: form});
+
+    const years = elementBuilder({...bluePrint, id: "years", classList: "years", textContent: "years", target: termDiv});
 
     const rateLabel = elementBuilder({...bluePrint, element: "label", classList: "label", textContent: "Interest Rate", htmlFor: "rate", target: inlineDivv});
 
     const rateDiv = elementBuilder({...bluePrint, classList: "rate-div", target: inlineDivv});
 
-    const rateInput = elementBuilder({...bluePrint, element: "input", id: "rate", step: ".01", name: "rate", type: "number", target: rateDiv});
+    const rateInput = elementBuilder({...bluePrint, element: "input", id: "rate", classList: "rate", step: ".01", name: "rate", type: "number", target: rateDiv});
 
-    const perc = elementBuilder({...bluePrint, id: "perc", textContent: "%", target: rateDiv});
+    const perc = elementBuilder({...bluePrint, id: "perc", classList: "perc", textContent: "%", target: rateDiv});
 
-    const typeLabel = elementBuilder({...bluePrint, element: "label", classList: "label", textContent: "Mortgage Type", htmlFor: "type", target: form});
+    const typeLabel = elementBuilder({...bluePrint, element: "label", id: "mtype", classList: "label", textContent: "Mortgage Type", htmlFor: "type", target: form});
 
     const radioDivOne = elementBuilder({...bluePrint, classList: "radio-div", target: form});
 
@@ -112,6 +116,9 @@ export function constGatherer() {
     const radioInputTwo = elementBuilder({...bluePrint, element: "input", classList: "radio-input", type: "radio", id: "radio-two", name: "radio", target: radioDivTwo});
 
     const radioLabelTwo = elementBuilder({...bluePrint, element: "label", classList: "radio-label", textContent: "Interest Only", htmlFor: "radio", target: radioDivTwo});
+    
+    const radioSpan = elementBuilder({...bluePrint, id: "radio-span", classList: "span", element: "p", textContent: "This field is required", target: form});
+
 
     radioDivOne.addEventListener("click", () => {
         radioInputOne.checked = true;
