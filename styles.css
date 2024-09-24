@@ -94,7 +94,7 @@
   }
 
   .empty-results {
-    display: none;
+    display: block;
   }
 
   .right-div-full {
@@ -107,13 +107,16 @@
 
   .full-title {
     margin-bottom: 20px;
+    display: none;
   }
 
   .full-text {
     color: var(--slate3);
+    display: none;
   }
 
   .results-div {
+    display: none;
     background-color: var(--slate10);
     margin-top: 30px;
     border-radius: 10px;
@@ -149,13 +152,13 @@
   }
 
   .empty-text {
-    display: none;
+    display: block;
     color: var(--slate3);
     padding-top: 20px;
   }
 
   .illustration {
-    display: none;
+    display: block;
     padding-bottom: 10px;
   }
 

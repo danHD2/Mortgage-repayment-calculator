@@ -37,37 +37,37 @@ export function constGatherer() {
 
     const leftDiv = elementBuilder({...bluePrint, classList: "left-div", target: container});
 
-    const rightDiv = elementBuilder({...bluePrint, classList: "right-div", target: container});
+    const rightDiv = elementBuilder({...bluePrint, classList: "right-div", id: "right-div", target: container});
 
-    const illustration = elementBuilder({...bluePrint, element: "img", classList: "illustration", src: "./assets/images/illustration-empty.svg", target: rightDiv});
+    const illustration = elementBuilder({...bluePrint, element: "img", classList: "illustration", id: "illustration", src: "./assets/images/illustration-empty.svg", target: rightDiv});
     
-    const emptyResults = elementBuilder({...bluePrint, element: "h2", classList: "empty-results", textContent: "Results shown here", target: rightDiv});
+    const emptyResults = elementBuilder({...bluePrint, element: "h2", classList: "empty-results", id: "empty-title", textContent: "Results shown here", target: rightDiv});
 
-    const emptyText = elementBuilder({...bluePrint, element: "p", classList: "empty-text", textContent: `Complete the form and click “calculate repayments” to see what your monthly repayments would be.`, target: rightDiv});
+    const emptyText = elementBuilder({...bluePrint, element: "p", classList: "empty-text", id: "empty-text", textContent: `Complete the form and click “calculate repayments” to see what your monthly repayments would be.`, target: rightDiv});
 
-    const fullTitle = elementBuilder({...bluePrint, element: "h2", classList: "full-title", textContent: "Your Results", target: rightDiv});
+    const fullTitle = elementBuilder({...bluePrint, element: "h2", classList: "full-title", id: "full-title", textContent: "Your Results", target: rightDiv});
 
-    const fullText = elementBuilder({...bluePrint, element: "p", classList: "full-text", textContent: `Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.`, target: rightDiv});
+    const fullText = elementBuilder({...bluePrint, element: "p", classList: "full-text", id: "full-text", textContent: `Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.`, target: rightDiv});
 
-    const resultsDiv = elementBuilder({...bluePrint, classList: "results-div", target: rightDiv});
+    const resultsDiv = elementBuilder({...bluePrint, classList: "results-div", id: "results-div", target: rightDiv});
 
     const monthlyTitle = elementBuilder({...bluePrint, element: "p", classList: "monthly-title", textContent: "Your monthly repayments", target: resultsDiv});
 
-    const monthlyResult = elementBuilder({...bluePrint, element: "p", classList: "monthly-result", textContent: "$1,797.74", target: resultsDiv});
+    const monthlyResult = elementBuilder({...bluePrint, element: "p", classList: "monthly-result", id:"monthly-result", textContent: "£1,797.74", target: resultsDiv});
 
     const hr = elementBuilder({...bluePrint, element: "hr", id: "hr", target: resultsDiv});
 
     const totalTitle = elementBuilder({...bluePrint, element: "p", classList: "total-title", textContent: "Total you'll repay over the term", target: resultsDiv});
 
-    const totalResult = elementBuilder({...bluePrint, element: "p", classList: "total-result", textContent: "$539,322.94", target: resultsDiv});
+    const totalResult = elementBuilder({...bluePrint, element: "p", classList: "total-result", id: "total-result", textContent: "£539,322.94", target: resultsDiv});
 
     const titleDiv = elementBuilder({...bluePrint, classList: "title-div", target: leftDiv});
 
     const title = elementBuilder({...bluePrint, element: "h1", classList: "title", textContent: "Mortgage Calculator", target: titleDiv});
 
-    const clearBtn = elementBuilder({...bluePrint, element: "p", classList: "clear-btn", textContent: "Clear All", target: titleDiv});
+    const clearBtn = elementBuilder({...bluePrint, element: "p", classList: "clear-btn", id: "clear-btn", textContent: "Clear All", target: titleDiv});
 
-    const form = elementBuilder({...bluePrint, element: "form", classList: "form", action: ``, target: leftDiv});
+    const form = elementBuilder({...bluePrint, element: "form", classList: "form", id:"form", action: ``, target: leftDiv});
 
     const amountLabel = elementBuilder({...bluePrint, element: "label", classList: "label", textContent: "Mortgage Amount", htmlFor: "amount", target: form});
 
@@ -75,7 +75,7 @@ export function constGatherer() {
 
     const quid = elementBuilder({...bluePrint, id: "quid", textContent: "£", target: amountDiv});
 
-    const amountInput = elementBuilder({...bluePrint, id: "amount", element: "input", name: "amount", type: "number", target: amountDiv});
+    const amountInput = elementBuilder({...bluePrint, id: "amount", element: "input", name: "amount", type: "text", target: amountDiv});
 
     const outerDiv = elementBuilder({...bluePrint, id: "outer-div", target: form});
 
@@ -95,7 +95,7 @@ export function constGatherer() {
 
     const rateDiv = elementBuilder({...bluePrint, classList: "rate-div", target: inlineDivv});
 
-    const rateInput = elementBuilder({...bluePrint, element: "input", id: "rate", name: "rate", type: "number", target: rateDiv});
+    const rateInput = elementBuilder({...bluePrint, element: "input", id: "rate", step: ".01", name: "rate", type: "number", target: rateDiv});
 
     const perc = elementBuilder({...bluePrint, id: "perc", textContent: "%", target: rateDiv});
 
