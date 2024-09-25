@@ -51,7 +51,7 @@ export function constGatherer() {
 
     const resultsDiv = elementBuilder({...bluePrint, classList: "results-div", id: "results-div", target: rightDiv});
 
-    const monthlyTitle = elementBuilder({...bluePrint, element: "p", classList: "monthly-title", textContent: "Your monthly repayments", target: resultsDiv});
+    const monthlyTitle = elementBuilder({...bluePrint, element: "p", classList: "monthly-title", id: "monthly-title", textContent: "Your monthly repayments", target: resultsDiv});
 
     const monthlyResult = elementBuilder({...bluePrint, element: "p", classList: "monthly-result", id:"monthly-result", textContent: "£1,797.74", target: resultsDiv});
 
@@ -91,7 +91,7 @@ export function constGatherer() {
 
     const termInput = elementBuilder({...bluePrint, element: "input", id: "term", classList: "term", name: "term", type: "number", target: termDiv});
 
-    const termSpan = elementBuilder({...bluePrint, id: "term-span", classList: "span", element: "p", textContent: "This field is required", target: form});
+    const termSpan = elementBuilder({...bluePrint, id: "term-span", classList: "span", element: "p", textContent: "This field is required", target: inlineDiv});
 
     const years = elementBuilder({...bluePrint, id: "years", classList: "years", textContent: "years", target: termDiv});
 
@@ -102,6 +102,8 @@ export function constGatherer() {
     const rateInput = elementBuilder({...bluePrint, element: "input", id: "rate", classList: "rate", step: ".01", name: "rate", type: "number", target: rateDiv});
 
     const perc = elementBuilder({...bluePrint, id: "perc", classList: "perc", textContent: "%", target: rateDiv});
+
+    const percSpan = elementBuilder({...bluePrint, id: "perc-span", classList: "span", element: "p", textContent: "This field is required", target: inlineDivv});
 
     const typeLabel = elementBuilder({...bluePrint, element: "label", id: "mtype", classList: "label", textContent: "Mortgage Type", htmlFor: "type", target: form});
 

@@ -2,21 +2,16 @@ const root = document.getElementById("root");
 
 import { constGatherer } from "./new-builder.js";
 
-import { calculate, displayResults, clear } from "./calculator.js";
-
 constGatherer();
+
+import { clear, verifyInputs } from "./calculator.js";
+
+
 const submit = document.getElementById("submit");
 const amountInput = document.getElementById("amount");
 const termInput = document.getElementById("term");
 const rateInput = document.getElementById("rate");
-submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    const amount = parseFloat(amountInput.value.replace(/,/g, '')) 
 
-    const result = calculate(amount, termInput.value, rateInput.value);
-
-    displayResults(result.monthlyPayment, result.totalRepayment);
-});
 
 amountInput.addEventListener('input', (event) => {
     let value = event.target.value;
@@ -35,3 +30,8 @@ function formatWithCommas(number) {
 }
 
 document.getElementById("clear-btn").addEventListener('click', clear)
+
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    verifyInputs();
+});

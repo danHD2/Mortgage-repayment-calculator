@@ -281,7 +281,7 @@ input::-webkit-inner-spin-button {
 #outer-div {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
 }
 
 .term-div {
@@ -481,4 +481,51 @@ input::-webkit-inner-spin-button {
 #submit:hover {
   background-color: rgba(215, 218, 47, 0.5);
   cursor: pointer;
+}
+
+@media  screen and (max-width: 900px) {
+  #root {
+    height: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-div {
+    width: 100%;
+  }
+
+  #submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .title-div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #outer-div {
+    flex-direction: column;
+  }
+
+  #inline-div {
+    width: 100%;
+  }
+
+  #inline-divv {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .right-div {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .right-div-full {
+    width: 100%;
+    border-radius: 0;
+  }
 }
